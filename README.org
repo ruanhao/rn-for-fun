@@ -1,0 +1,35 @@
+* Demos
+** ToggleBackgroundColor
+
+#+HTML: <img src="https://dpzbhybb2pdcj.cloudfront.net/dabit/Figures/c04_02.png"/>
+
+** ProfileCard
+
+[[file:imgs/profileCard.png]]
+
+
+
+* Styles
+
+** BorderProperties
+
+There are only four categories of border properties: =borderColor=, =borderRadius=, =borderStyle=, and =borderWidth=.
+
+#+HTML: <img src="https://dpzbhybb2pdcj.cloudfront.net/dabit/Figures/c04_05.png"/>
+
+** BorderRadius
+
+#+HTML: <img src="https://dpzbhybb2pdcj.cloudfront.net/dabit/Figures/c04_06.png"/>
+
+
+** MarginProperties
+
+#+HTML: <img src="https://dpzbhybb2pdcj.cloudfront.net/dabit/Figures/c04_10.png"/>
+
+** PaddingProperties
+
+[[file:imgs/padding.png]]
+
+** TextProperties
+
+#+HTML: <img src="https://dpzbhybb2pdcj.cloudfront.net/dabit/Figures/c04_19.png"/>
