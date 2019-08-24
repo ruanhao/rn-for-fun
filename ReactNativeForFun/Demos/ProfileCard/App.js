@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, StyleSheet, View, Text } from 'react-native';
+import { Image, StyleSheet, Platform, View, Text } from 'react-native';
 
 export default class App extends Component<{}> {
     render() {
@@ -51,7 +51,20 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         backgroundColor: profileCardColor,
         width: 300,
-        height: 400
+        height: 400,
+        ...Platform.select({
+            ios: {
+                shadowColor: 'black',
+                shadowOffset: {
+                    height: 10
+                },
+                shadowOpacity: 1
+            },
+            android: {
+                elevation: 15
+            }
+        })
+
     },
     cardImageContainer: {
         alignItems: 'center',
@@ -63,6 +76,20 @@ const styles = StyleSheet.create({
         borderRadius: 60,
         marginTop: 30,
         paddingTop: 16,
+        ...Platform.select({
+            ios: {
+                shadowColor: 'black',
+                shadowOffset: {
+                    height: 10,
+                },
+                shadowOpacity: 1
+            },
+            android: {
+                borderWidth: 3,
+                borderColor: 'black',
+                elevation: 15
+            }
+        })
     },
     cardImage: {
         width: 85,
