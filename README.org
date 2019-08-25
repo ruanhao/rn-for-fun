@@ -1,35 +1,67 @@
-* Demos
-** ToggleBackgroundColor
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="README.css"/>
+
+* ToggleBackgroundColor
 
 #+HTML: <img src="https://dpzbhybb2pdcj.cloudfront.net/dabit/Figures/c04_02.png"/>
 
-** ProfileCard
+
+* ProfileCard
 
 [[file:imgs/profileCard.png]]
 
 
+* ProfileCardThumbnail
 
-* Styles
+[[file:imgs/profileCardThumbnail.png]]
 
-** BorderProperties
 
-There are only four categories of border properties: =borderColor=, =borderRadius=, =borderStyle=, and =borderWidth=.
+* BorderProperties
+
+There are only four categories of border properties:
+
+- =borderColor=
+- =borderRadius=
+- =borderStyle=
+- =borderWidth=
 
 #+HTML: <img src="https://dpzbhybb2pdcj.cloudfront.net/dabit/Figures/c04_05.png"/>
 
-** BorderRadius
+
+* BorderRadius
 
 #+HTML: <img src="https://dpzbhybb2pdcj.cloudfront.net/dabit/Figures/c04_06.png"/>
 
 
-** MarginProperties
+* MarginProperties
 
 #+HTML: <img src="https://dpzbhybb2pdcj.cloudfront.net/dabit/Figures/c04_10.png"/>
 
-** PaddingProperties
+
+* PaddingProperties
 
 [[file:imgs/padding.png]]
 
-** TextProperties
+
+* TextProperties
 
 #+HTML: <img src="https://dpzbhybb2pdcj.cloudfront.net/dabit/Figures/c04_19.png"/>
+
+
+* Transformation
+
+The =transform= style supports the following properties:
+
+- =perspective=
+- =translateX= and =translateY=
+- =rotateX=, =rotateY=, and =rotateZ= (rotate)
+- =scale=, =scaleX=, and =scaleY=
+- =skewX= and =skewY=
+
+
+** TransformationScale
+[[file:imgs/transformationScale.png]]
+
+
+** TransformationSkew
+
+#+HTML: <img src="https://dpzbhybb2pdcj.cloudfront.net/dabit/Figures/c05_15.png"/>
