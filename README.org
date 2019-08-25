@@ -1,21 +1,31 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="README.css"/>
 
-* ToggleBackgroundColor
+
+* Gallery
+
+** ToggleBackgroundColor
 
 #+HTML: <img src="https://dpzbhybb2pdcj.cloudfront.net/dabit/Figures/c04_02.png"/>
 
 
-* ProfileCard
+** ProfileCard
 
 [[file:imgs/profileCard.png]]
 
 
-* ProfileCardThumbnail
+** ProfileCardThumbnail
 
 [[file:imgs/profileCardThumbnail.png]]
 
 
-* BorderProperties
+** BackfaceVisibility
+
+[[file:imgs/backfaceVisibility.png]]
+
+* Properties
+
+
+** BorderProperties
 
 There are only four categories of border properties:
 
@@ -27,25 +37,37 @@ There are only four categories of border properties:
 #+HTML: <img src="https://dpzbhybb2pdcj.cloudfront.net/dabit/Figures/c04_05.png"/>
 
 
-* BorderRadius
+** BorderRadius
 
 #+HTML: <img src="https://dpzbhybb2pdcj.cloudfront.net/dabit/Figures/c04_06.png"/>
 
 
-* MarginProperties
+** MarginProperties
 
 #+HTML: <img src="https://dpzbhybb2pdcj.cloudfront.net/dabit/Figures/c04_10.png"/>
 
 
-* PaddingProperties
+** PaddingProperties
 
 [[file:imgs/padding.png]]
 
 
-* TextProperties
+
+** TextProperties
 
 #+HTML: <img src="https://dpzbhybb2pdcj.cloudfront.net/dabit/Figures/c04_19.png"/>
 
+
+** ShadowProperties
+
+[[file:imgs/shadowProperties.png]]
+
+** ElevationProperties
+
+- On iOS, elevation is ignored; all components retain the same z-order, so whatever component is last in the layout is on top
+- On Android, elevation is used, and the z-order is changed
+
+[[file:imgs/elevation.png]]
 
 * Transformation
 
@@ -56,6 +78,20 @@ The =transform= style supports the following properties:
 - =rotateX=, =rotateY=, and =rotateZ= (rotate)
 - =scale=, =scaleX=, and =scaleY=
 - =skewX= and =skewY=
+
+** TransformationTranslate
+
+[[file:imgs/transformationTranslate.png]]
+
+** TransformationRotate
+
+
+
+[[file:imgs/transformationRotateX.png]]
+
+[[file:imgs/transformationRotateY.png]]
+
+file:imgs/transformationRotateZ.png
 
 
 ** TransformationScale
