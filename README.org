@@ -65,3 +65,48 @@ The =transform= style supports the following properties:
 ** TransformationSkew
 
 #+HTML: <img src="https://dpzbhybb2pdcj.cloudfront.net/dabit/Figures/c05_15.png"/>
+
+
+* Flex
+
+** Flexbox
+
+[[file:imgs/flexBox.png]]
+
+** FlexDirection
+
+[[file:imgs/flexDirection.png]]
+
+** FlexJustifyContent
+
+=justifyContent= defines how space is distributed between and around flex items along the *primary axis* of the container (the flex direction). \\
+=justifyContent= is declared on the parent container. Five options are available:
+
+- center
+- fixStart
+- fixEnd
+- space-around
+- space-between
+
+#+HTML: <img src="https://dpzbhybb2pdcj.cloudfront.net/dabit/Figures/c05_18.png"/>
+
+** FlexAlignItems
+
+=alignItems= defines how to align children along the secondary axis of their container. This property is declared on the parent view.
+
+There are four possible values for =alignItems=: (=stretch= is the default)
+- =stretch=
+- =center=
+- =flex-start=
+- =flex-end=
+
+#+HTML: <img src="https://dpzbhybb2pdcj.cloudfront.net/dabit/Figures/c05_19.png"/>
+
+** FlexAlignSelf
+
+#+HTML: <img src="https://dpzbhybb2pdcj.cloudfront.net/dabit/Figures/c05_20.png"/>
+
+
+** FlexWrap
+
+#+HTML: <img src="https://dpzbhybb2pdcj.cloudfront.net/dabit/Figures/c05_21.png"/>
