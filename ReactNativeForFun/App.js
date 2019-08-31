@@ -1,3 +1,7 @@
+import { YellowBox } from 'react-native';
+YellowBox.ignoreWarnings(['Remote debugger']);
+
+
 // export default from './Demo/BorderProperties/App.js';
 // export default from './Demo/BorderRadius/App.js';
 // export default from './Demo/MarginProperties/App.js';
@@ -26,4 +30,5 @@
 // export default from './Demo/ToggleBackgroundColor/App.js';
 // export default from './Demo/ProfileCard/App.js';
 // export default from './Demo/ProfileCardThumbnail/App.js';
-export default from './Demo/BackfaceVisibility/App.js';
+// export default from './Demo/BackfaceVisibility/App.js';
+export default from './Demo/Cities/App.js';
