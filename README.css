@@ -799,6 +799,22 @@ h6 {
 }
 
 img {
-    max-width: 30%;
-    max-height: 30%;
+    max-width: 50%;
+}
+
+/* * { */
+/*   box-sizing: border-box; */
+/* } */
+
+.column {
+  float: left;
+  width: 33%;
+
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
 }

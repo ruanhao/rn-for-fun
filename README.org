@@ -1,6 +1,5 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="README.css"/>
 
-
 * Gallery
 
 ** ToggleBackgroundColor
@@ -25,11 +24,24 @@
 
 ** Cities (Navigation)
 
+#+HTML: <div class="row">
+
+#+HTML: <div class="column">
 [[file:imgs/cities1.png]]
+#+HTML: </div>
 
+#+HTML: <div class="column">
 [[file:imgs/cities2.png]]
+#+HTML: </div>
 
+#+HTML: <div class="column">
 [[file:imgs/cities3.png]]
+#+HTML: </div>
+
+#+HTML: </div>
+** Books (Redux)
+
+[[file:imgs/reduxBooks.png]]
 
 * Properties
 
@@ -94,14 +106,21 @@ The =transform= style supports the following properties:
 
 ** TransformationRotate
 
+#+HTML: <div class="row">
 
-
+#+HTML: <div class="column">
 [[file:imgs/transformationRotateX.png]]
+#+HTML: </div>
 
+#+HTML: <div class="column">
 [[file:imgs/transformationRotateY.png]]
+#+HTML: </div>
 
+#+HTML: <div class="column">
 file:imgs/transformationRotateZ.png
+#+HTML: </div>
 
+#+HTML: </div>
 
 ** TransformationScale
 [[file:imgs/transformationScale.png]]
