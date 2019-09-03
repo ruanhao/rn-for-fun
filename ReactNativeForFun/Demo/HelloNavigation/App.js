@@ -17,23 +17,46 @@ class LogoTitle extends React.Component {
 class HomeScreen extends React.Component {
     /* A screen component can have a static property called `navigationOptions`
        which is EITHER an object OR a function that returns an object that contains various configuration options.*/
-    static navigationOptions = {
-        // headerTitle: 'Home',
-        headerTitle: <LogoTitle />, // customize title with Image
-        /* There are three key properties to use when customizing the style of your header: `headerStyle`, `headerTintColor`, and `headerTitleStyle` */
-        headerStyle: {
-            backgroundColor: 'orange',
-        },
-        headerTintColor: 'white',
-        headerTitleStyle: {
-            fontWeight: 'bold',
-        },
+    static navigationOptions = ({ navigation }) => {
+        return {
+            // headerTitle: 'Home',
+            headerTitle: <LogoTitle />, // customize title with Image
+            headerRight: (
+                <Button
+                    /* The most commonly used pattern for giving a header button access to a function on the component instance is to use `params` */
+                    /* Note: React Navigation doesn't guarantee that your screen component will be mounted before the header. */
+                    onPress={navigation.getParam('increaseCount')}
+                    title="+1"
+                    color="#fff"
+                />
+            ),
+            /* There are three key properties to use when customizing the style of your header: `headerStyle`, `headerTintColor`, and `headerTitleStyle` */
+            headerStyle: {
+                backgroundColor: 'orange',
+            },
+            headerTintColor: 'white',
+            headerTitleStyle: {
+                fontWeight: 'bold',
+            },
+        };
+    };
+
+    state = {
+        count: 0,
+    };
+
+    componentDidMount() {
+        this.props.navigation.setParams({ increaseCount: this._increaseCount });
+    }
+
+    _increaseCount = () => {
+        this.setState({ count: this.state.count + 1 });
     };
 
     render() {
         return (
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                <Text>Home Screen</Text>
+                <Text>Home Screen ({this.state.count} hits)</Text>
                 {/*Navigating to a new screen*/}
                 <Button
                     title='Go to Details'
