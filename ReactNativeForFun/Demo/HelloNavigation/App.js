@@ -1,9 +1,35 @@
 import React from 'react';
-import { Button, View, Text } from 'react-native';
-import { createAppContainer, NavigationEvents } from 'react-navigation';
+import { Image, Button, View, Text } from 'react-native';
+import { createBottomTabNavigator, createAppContainer, NavigationEvents } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
+class LogoTitle extends React.Component {
+    render() {
+        return (
+            <Image
+                source={require('./spiro.png')}
+                style={{ width: 30, height: 30 }}
+            />
+        );
+    }
+}
+
 class HomeScreen extends React.Component {
+    /* A screen component can have a static property called `navigationOptions`
+       which is EITHER an object OR a function that returns an object that contains various configuration options.*/
+    static navigationOptions = {
+        // headerTitle: 'Home',
+        headerTitle: <LogoTitle />, // customize title with Image
+        /* There are three key properties to use when customizing the style of your header: `headerStyle`, `headerTintColor`, and `headerTitleStyle` */
+        headerStyle: {
+            backgroundColor: 'orange',
+        },
+        headerTintColor: 'white',
+        headerTitleStyle: {
+            fontWeight: 'bold',
+        },
+    };
+
     render() {
         return (
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -24,6 +50,13 @@ class HomeScreen extends React.Component {
 }
 
 class DetailsScreen extends React.Component {
+    /* React Navigation will call it with an object containing `{ navigation, navigationOptions, screenProps }` */
+    static navigationOptions = ({ navigation }) => {
+        return {
+            title: navigation.getParam('otherParam', 'A Nested Details Screen'),
+        };
+    };
+
     render() {
 
         /* 2. Get the param, provide a fallback value if not available */
@@ -39,6 +72,7 @@ class DetailsScreen extends React.Component {
         const itemId = navigation.getParam('itemId', 'NO-ID');
         const otherParam = navigation.getParam('otherParam', 'Sprite');
 
+        const d = new Date();
         return (
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                 <Text>Details Screen</Text>
@@ -64,6 +98,10 @@ class DetailsScreen extends React.Component {
                     title="Go back"
                     onPress={() => this.props.navigation.goBack()}
                 />
+                <Button
+                    title="Update the title"
+                    onPress={() => this.props.navigation.setParams({ otherParam: `Updated@${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}` })}
+                />
                 <NavigationEvents
                     onWillFocus={payload => console.log('will focus', payload)}
                     onDidFocus={payload => console.log('did focus', payload)}
@@ -83,7 +121,21 @@ const AppNavigator = createStackNavigator(
     },
     {
         initialRouteName: 'Home',
+        /* Sharing common navigationOptions across screens */
+        defaultNavigationOptions: {
+            headerStyle: {
+                backgroundColor: 'yellow',
+            },
+            headerTintColor: 'blue',
+            headerTitleStyle: {
+                fontWeight: 'bold',
+            },
+        },
+        /* The property navigationOptions can be used to configure the navigator itself */
+        navigationOptions: {
+            tabBarLabel: 'Home!',
+        },
     }
 );
 
-export default createAppContainer(AppNavigator);
+export default createAppContainer(createBottomTabNavigator({ AppNavigator }));
