@@ -32,4 +32,6 @@ YellowBox.ignoreWarnings(['Remote debugger']);
 // export default from './Demo/ProfileCardThumbnail/App.js';
 // export default from './Demo/BackfaceVisibility/App.js';
 // export default from './Demo/Cities/App.js';
-export default from './Demo/ReduxBooks/App.js';
+// export default from './Demo/ReduxBooks/App.js';
+/* Navigation */
+export default from './Demo/HelloNavigation/App.js';
