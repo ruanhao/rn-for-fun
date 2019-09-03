@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, View, Text } from 'react-native';
-import { createAppContainer } from 'react-navigation';
+import { createAppContainer, NavigationEvents } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
 class HomeScreen extends React.Component {
@@ -42,6 +42,12 @@ class DetailsScreen extends React.Component {
                 <Button
                     title="Go back"
                     onPress={() => this.props.navigation.goBack()}
+                />
+                <NavigationEvents
+                    onWillFocus={payload => console.log('will focus', payload)}
+                    onDidFocus={payload => console.log('did focus', payload)}
+                    onWillBlur={payload => console.log('will blur', payload)}
+                    onDidBlur={payload => console.log('did blur', payload)}
                 />
             </View>
         );
