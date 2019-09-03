@@ -161,4 +161,17 @@ const AppNavigator = createStackNavigator(
     }
 );
 
-export default createAppContainer(createBottomTabNavigator({ AppNavigator }));
+const AppContainer = createAppContainer(createBottomTabNavigator({ AppNavigator }));
+
+export default class App extends React.Component {
+    render() {
+        return (
+            <AppContainer
+                onNavigationStateChange={(prevState, newState, action) => {
+                    console.log("Navigation state change: ", prevState, newState, action);
+                }}
+            />
+        );
+    }
+
+}
