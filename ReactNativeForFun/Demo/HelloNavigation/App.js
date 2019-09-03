@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, Button, View, Text } from 'react-native';
-import { createBottomTabNavigator, createAppContainer, NavigationEvents } from 'react-navigation';
+import { createMaterialTopTabNavigator, createBottomTabNavigator, createAppContainer, NavigationEvents } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
 class LogoTitle extends React.Component {
@@ -10,6 +10,20 @@ class LogoTitle extends React.Component {
                 source={require('./spiro.png')}
                 style={{ width: 30, height: 30 }}
             />
+        );
+    }
+}
+
+class ModalScreen extends React.Component {
+    render() {
+        return (
+            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                <Text style={{ fontSize: 30 }}>This is a modal!</Text>
+                <Button
+                    onPress={() => this.props.navigation.goBack()}
+                    title="Dismiss"
+                />
+            </View>
         );
     }
 }
@@ -30,6 +44,17 @@ class HomeScreen extends React.Component {
                     color="#fff"
                 />
             ),
+            headerLeft: (
+                <Button
+                    /* React Navigation attempts to find the route on the closest navigator and then performs the action there. */
+                    /* The navigate action flowing up from HomeScreen to MainStack, we know that MainStack can't handle the route MyModal,
+                       so it then flows it up to RootStack, which can handle that route and so it does. */
+                    onPress={() => navigation.navigate('MyModal')}
+                    title="Info"
+                    color="#fff"
+                />
+            ),
+
             /* There are three key properties to use when customizing the style of your header: `headerStyle`, `headerTintColor`, and `headerTitleStyle` */
             headerStyle: {
                 backgroundColor: 'orange',
@@ -137,7 +162,7 @@ class DetailsScreen extends React.Component {
 }
 
 /* createStackNavigator is a function that returns a React component. It takes a route configuration object and, optionally, an options object.*/
-const AppNavigator = createStackNavigator(
+const MainStack = createStackNavigator(
     {
         Home: HomeScreen,
         Details: DetailsScreen,
@@ -161,7 +186,19 @@ const AppNavigator = createStackNavigator(
     }
 );
 
-const AppContainer = createAppContainer(createBottomTabNavigator({ AppNavigator }));
+const RootStack = createStackNavigator(
+    {
+        Main: MainStack,
+        MyModal: ModalScreen,
+    },
+    {
+        mode: 'modal', /* To change the type of transition on a stack navigator */
+        headerMode: 'none', /* disable the header across the entire stack. */
+
+    }
+);
+
+const AppContainer = createAppContainer(RootStack);
 
 export default class App extends React.Component {
     render() {
