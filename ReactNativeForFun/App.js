@@ -34,4 +34,5 @@ YellowBox.ignoreWarnings(['Remote debugger']);
 // export default from './Demo/Cities/App.js';
 // export default from './Demo/ReduxBooks/App.js';
 /* Navigation */
-export default from './Demo/HelloNavigation/App.js';
+// export default from './Demo/HelloNavigation/App.js';
+export default from './Demo/DrawerNavigation/App.js';
