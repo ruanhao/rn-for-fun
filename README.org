@@ -44,7 +44,7 @@
 [[file:imgs/reduxBooks.png]]
 
 
-** HelloNavigation
+** HelloNavigation (Stack)
 
 [[file:imgs/stackNav1.png]]
 
@@ -54,6 +54,10 @@
 ** DrawerNavigation
 
 [[file:imgs/drawer.png]]
+
+** TabNavigation
+
+[[file:imgs/tabNavigation.png]]
 
 
 * Properties
